@@ -1,0 +1,22 @@
+{
+  "name": "proxy-tester",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "module",
+  "repository": "git@github.com:Ismael-Rakotondrazaka/proxy-tester.git",
+  "author": "Ismael Rakotondrazaka <ismaelrakotondrazaka@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
