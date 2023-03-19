@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 
+import { errorMiddleware } from "./middlewares/index.js";
+
 dotenv.config();
 
 const app = express();
@@ -42,5 +44,16 @@ app.get("/ips", (req, res, next) => {
     next(err);
   }
 });
+
+app.use("*", (req, res, next) => {
+  try {
+    res.status(404);
+    res.send("Not Found");
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.use(errorMiddleware);
 
 export { app };
